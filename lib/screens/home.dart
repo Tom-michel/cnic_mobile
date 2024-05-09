@@ -20,9 +20,6 @@ class _HomeState extends State<Home> {
   // late TextEditingController controller;
   final TextEditingController codeController = TextEditingController();
   bool isNumeric(String s) {
-    if (s == null) {
-      return false;
-    }
     return double.tryParse(s) != null;
   }
 
@@ -474,8 +471,9 @@ class _HomeState extends State<Home> {
               children: [
                 // help button
                 Container(
-                  height: 50,
-                  margin: const EdgeInsets.all(20),
+                  height: 40,
+                  margin: const EdgeInsets.only(
+                      top: 20, bottom: 10, left: 20, right: 20),
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(80, 158, 158, 158),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -503,7 +501,7 @@ class _HomeState extends State<Home> {
                 // horizontal line
                 Container(
                   margin: const EdgeInsets.only(
-                      top: 10, bottom: 5, left: 20, right: 20),
+                      top: 5, bottom: 0, left: 20, right: 20),
                   height: 1,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(129, 158, 158, 158),
@@ -522,6 +520,18 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.w600,
                     ),
                     minFontSize: 5.0,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+
+                // horizontal line
+                Container(
+                  margin: const EdgeInsets.only(
+                      top: 0, bottom: 5, left: 20, right: 20),
+                  height: 1,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(129, 158, 158, 158),
+                    borderRadius: BorderRadius.circular(6),
                   ),
                 ),
 
@@ -559,87 +569,84 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
+      bottomNavigationBar: Container(
         color: Config.colors.primaryColor,
-        child: Container(
-          // color: Config.colors.primaryColor,
-          // height: 40,
-          height: 5,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // const Text(
-              //   "PEACE - WORK - FATHERLAND",
-              //   style: TextStyle(
-              //       color: Colors.white,
-              //       fontSize: 10,
-              //       fontFamily: "Nunito",
-              //       fontWeight: FontWeight.w600),
-              // ),
-              // const SizedBox(height: 5),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Container(
-              //       height: 3,
-              //       width: 45,
-              //       margin:
-              //           const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-              //       decoration: BoxDecoration(
-              //         color: const Color.fromARGB(255, 0, 255, 8),
-              //         borderRadius: BorderRadius.circular(6),
-              //       ),
-              //     ),
-              //     Container(
-              //       height: 3,
-              //       width: 45,
-              //       margin:
-              //           const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-              //       decoration: BoxDecoration(
-              //         color: Colors.red,
-              //         borderRadius: BorderRadius.circular(6),
-              //       ),
-              //     ),
-              //     Container(
-              //       height: 3,
-              //       width: 45,
-              //       margin:
-              //           const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-              //       decoration: BoxDecoration(
-              //         color: Colors.yellow,
-              //         borderRadius: BorderRadius.circular(6),
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 5,
-                    width: size.width * 0.33,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 15, 189, 20),
-                    ),
+        // height: 40,
+        height: 5,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // const Text(
+            //   "PEACE - WORK - FATHERLAND",
+            //   style: TextStyle(
+            //       color: Colors.white,
+            //       fontSize: 10,
+            //       fontFamily: "Nunito",
+            //       fontWeight: FontWeight.w600),
+            // ),
+            // const SizedBox(height: 5),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Container(
+            //       height: 3,
+            //       width: 45,
+            //       margin:
+            //           const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+            //       decoration: BoxDecoration(
+            //         color: const Color.fromARGB(255, 0, 255, 8),
+            //         borderRadius: BorderRadius.circular(6),
+            //       ),
+            //     ),
+            //     Container(
+            //       height: 3,
+            //       width: 45,
+            //       margin:
+            //           const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+            //       decoration: BoxDecoration(
+            //         color: Colors.red,
+            //         borderRadius: BorderRadius.circular(6),
+            //       ),
+            //     ),
+            //     Container(
+            //       height: 3,
+            //       width: 45,
+            //       margin:
+            //           const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+            //       decoration: BoxDecoration(
+            //         color: Colors.yellow,
+            //         borderRadius: BorderRadius.circular(6),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 5,
+                  width: size.width * 0.33,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 15, 189, 20),
                   ),
-                  Container(
-                    height: 5,
-                    width: size.width * 0.33,
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
-                    ),
+                ),
+                Container(
+                  height: 5,
+                  width: size.width * 0.33,
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
                   ),
-                  Container(
-                    height: 5,
-                    width: size.width * 0.33,
-                    decoration: const BoxDecoration(
-                      color: Colors.yellow,
-                    ),
+                ),
+                Container(
+                  height: 5,
+                  width: size.width * 0.33,
+                  decoration: const BoxDecoration(
+                    color: Colors.yellow,
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
